@@ -32,13 +32,11 @@ namespace CaseStudy
                // Entrando em outra tabela conectada a Contato
                EntityReference nivel = (EntityReference)contatoCrm["g07_niveldocliente"];
 
-                Console.WriteLine("Ola senhor(a)!!");
-                Console.WriteLine(contatoCrm["fullname"].ToString());
-
-
 
                 if (contatoCrm["contactid"].ToString() == usuario)
                 {
+                    Console.WriteLine("Ola senhor(a)!!");
+                    Console.WriteLine(contatoCrm["fullname"].ToString());
                     Console.WriteLine("Qual oportunidade você deseja aplicar o desconto ? (Descreve em valor)");
                     double valor = int.Parse(Console.ReadLine());
                     double vFinal = 1;

@@ -54,6 +54,9 @@ namespace CaseStudy.Model
             if (resposta == "N" || resposta == "n")
             {
                 Console.WriteLine("Obrigado pelo consulta volte sempre");
+                Console.WriteLine("------------------------------------");
+                Console.WriteLine("------------------------------------");
+                Console.WriteLine("------------------------------------");
             }
         }
     }
