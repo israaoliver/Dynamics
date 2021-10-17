@@ -1,0 +1,6 @@
+Para inicializar o Debbug do Plugin Regustration tool no Visual Studio o atalho é:
+ctrl + alt + P
+Selecionar o processo 
+PluginRegistration.exe
+Depois fazer os processos no replay do app
+
