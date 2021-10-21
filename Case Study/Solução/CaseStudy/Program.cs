@@ -78,7 +78,7 @@ namespace CaseStudy
                 }
 
             }
-            Console.WriteLine("...");
+            Console.ReadKey();
         }
 
         

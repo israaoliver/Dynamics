@@ -1,0 +1,15 @@
+        var contatoPrimario = formContext.getAttribute(Treinamento.Account.Attributtes.ContatoPrimario).getValue();
+        //alert(contatoPrimario[0].name);
+        //alert(contatoPrimario[0].entityType);
+        //alert(contatoPrimario[0].id);
+
+        if (contatoPrimario != null)
+            return;
+
+        var setLookup = [];
+        setLookup[0] = {}; //new Object();
+        setLookup[0].id = "0b23e028-3d26-ec11-b6e6-0022483722e5";
+        setLookup[0].entityType = "contact";
+        setLookup[0].name = "Tamer Salah";
+
+        formContext.getAttribute(Treinamento.Account.Attributtes.ContatoPrimario).setValue(setLookup);
