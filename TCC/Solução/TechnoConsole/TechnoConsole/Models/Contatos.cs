@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TechnoConsole.ConnectionsFactory;
 using TechnoConsole.Interfaces;
 
 namespace TechnoConsole.Models
@@ -15,10 +16,14 @@ namespace TechnoConsole.Models
         public string TableName = "contact";
         public IOrganizationService Service { get; set; }
 
+        public IOrganizationService connectDynamics2 = ConnectionDynamics2.GetCrmService();
+
         public Contatos(IOrganizationService service)
         {
             this.Service = service;
         }
+
+
 
       
         public EntityCollection GetLista()
@@ -28,6 +33,7 @@ namespace TechnoConsole.Models
             queryContats.ColumnSet.AddColumns
                 ("firstname",
                 "lastname",
+                "fullname",
                 "telephone1",
                 "jobtitle",
                 "parentcustomerid",
@@ -50,9 +56,13 @@ namespace TechnoConsole.Models
         {
             Entity newContatc = new Entity(this.TableName);
 
+            Contas getaccounts = new Contas(connectDynamics2);
+            EntityCollection accounts = getaccounts.GetLista();
+
             foreach (Entity contato in dataTable.Entities)
             {
-                newContatc["firstname"] = contato["firstname"].ToString();
+                string contatoName = contato["firstname"].ToString();
+                newContatc["firstname"] = contatoName;
 
                 newContatc["lastname"] = contato["lastname"].ToString();
 
@@ -63,7 +73,30 @@ namespace TechnoConsole.Models
                 newContatc["jobtitle"] = cargo;
 
                 EntityReference parentid = contato.Contains("parentcustomerid") ? (EntityReference)contato["parentcustomerid"] : null;
-                newContatc["parentcustomerid"] = parentid;
+                if(parentid != null)
+                {
+                    foreach (Entity account in accounts.Entities)
+                    {
+                        string accounttName = account["name"].ToString();
+                        if (parentid.Name == accounttName)
+                        {
+                            string idDaConta = account["accountid"].ToString();
+                            Guid id = new Guid(idDaConta);
+                            parentid.Id = id;
+                            newContatc["parentcustomerid"] = parentid;
+                            break;
+                        }
+                        else
+                        { newContatc["parentcustomerid"] = null; }
+
+                    }
+                }
+                else
+                {
+                    newContatc["parentcustomerid"] = parentid;
+                }
+
+               
 
                 string email = contato.Contains("emailaddress1") ? (contato["emailaddress1"]).ToString() : string.Empty;
                 newContatc["emailaddress1"] = email;

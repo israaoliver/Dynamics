@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TechnoConsole.ConnectionsFactory;
 using TechnoConsole.Interfaces;
 
 namespace TechnoConsole.Models
@@ -13,6 +14,8 @@ namespace TechnoConsole.Models
     {
         public string TableName = "invoice";
         public IOrganizationService Service { get; set; }
+
+        public IOrganizationService connectDynamics2 = ConnectionDynamics2.GetCrmService();
 
         public Fatura(IOrganizationService service)
         {
@@ -26,7 +29,6 @@ namespace TechnoConsole.Models
                 ("invoicenumber",
                 "name",
                 "transactioncurrencyid",
-                "pricelevelid",
                 "ispricelocked",
                 "datedelivered",
                 "duedate",
@@ -48,20 +50,18 @@ namespace TechnoConsole.Models
 
             Entity invoice = new Entity(this.TableName);
 
+            Contatos getContacts = new Contatos(connectDynamics2);
+            EntityCollection contatos = getContacts.GetLista();
+
             foreach (Entity fatura in dataTable.Entities)
             {
                 invoice["invoicenumber"] = fatura["invoicenumber"].ToString();
 
                 invoice["name"] = fatura["name"].ToString();
 
-                string site = fatura.Contains("websiteurl") ? (fatura["websiteurl"]).ToString() : string.Empty;
-                invoice["websiteurl"] = site;
-
                 EntityReference moeda = fatura.Contains("transactioncurrencyid") ? (EntityReference)fatura["transactioncurrencyid"] : null;
                 invoice["transactioncurrencyid"] = moeda;
 
-                EntityReference listaPrecos = fatura.Contains("pricelevelid") ? (EntityReference)fatura["pricelevelid"] : null;
-                invoice["pricelevelid"] = listaPrecos;
 
                 invoice["ispricelocked"] = fatura["ispricelocked"];
 
@@ -78,10 +78,10 @@ namespace TechnoConsole.Models
                 OptionSetValue condicaoPagamento = fatura.Contains("paymenttermscode") ? (OptionSetValue)fatura["paymenttermscode"] : null;
                 invoice["paymenttermscode"] = condicaoPagamento;
 
-                Money valorDetalhado = fatura.Contains("totallineitemamount") ? (Money)((AliasedValue)fatura["totallineitemamount"]).Value : null;
+                var valorDetalhado = fatura.Contains("totallineitemamount") ? (fatura["totallineitemamount"]) : null;
                 invoice["totallineitemamount"] = valorDetalhado;
 
-                Decimal descontoFatura = fatura.Contains("discountpercentage") ? (Decimal)(fatura["descontoFatura"]) : 0;
+                Decimal descontoFatura = fatura.Contains("discountpercentage") ? (Decimal)(fatura["discountpercentage"]) : 0;
                 invoice["discountpercentage"] = descontoFatura;
 
                 Money valorDescontonaFatura = fatura.Contains("discountamount") ? (Money)((AliasedValue)fatura["discountamount"]).Value : null;
@@ -94,7 +94,28 @@ namespace TechnoConsole.Models
                 invoice["salesorderid"] = contrato;
 
                 EntityReference client = fatura.Contains("customerid") ? (EntityReference)fatura["customerid"] : null;
-                invoice["customerid"] = client;
+                if (client != null)
+                {
+                    foreach (Entity contact in contatos.Entities)
+                    {
+                        string contactName = contact["fullname"].ToString();
+                        if (client.Name == contactName)
+                        {
+                            string idContato = contact["contactid"].ToString();
+                            Guid id = new Guid(idContato);
+                            client.Id = id;
+                            invoice["customerid"] = client;
+                            break;
+                        }
+                        else
+                        { invoice["customerid"] = null; }
+
+                    }
+                }
+                else
+                {
+                    invoice["customerid"] = client;
+                }
 
 
 

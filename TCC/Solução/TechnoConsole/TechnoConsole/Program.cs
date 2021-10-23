@@ -25,7 +25,7 @@ namespace TechnoConsole
 
             //Criando novas contas no Dynamics 2
             Contas createAccounts = new Contas(connectDynamics2);
-            createAccounts.CreateDataTable(contasCrm);
+            //createAccounts.CreateDataTable(contasCrm);
 
             //===================Contatos======================//
             //Buscar os Contatos no Dynamics 1 na tabela contatos
@@ -34,7 +34,7 @@ namespace TechnoConsole
 
             //Criando novos contatos no Dynamics 2
             Contatos createContacs = new Contatos(connectDynamics2);
-           // createContacs.CreateDataTable(contatosCRM);
+            //createContacs.CreateDataTable(contatosCRM);
 
             //========================Concorrentes===========================//
             // Busca concorrentes no Dynamics 1 na tabela concorrentes
