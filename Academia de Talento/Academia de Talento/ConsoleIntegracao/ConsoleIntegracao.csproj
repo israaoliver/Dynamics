@@ -120,7 +120,6 @@
     <Compile Include="Model\Account.cs" />
     <Compile Include="Model\Contato.cs" />
     <Compile Include="Model\ConviteDoEvento.cs" />
-    <Compile Include="Model\IOrganizationServiceContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

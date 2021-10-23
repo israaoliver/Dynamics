@@ -1,0 +1,50 @@
+
+Testando a introdução de informação nas tabelas:
+
+foreach (Entity conta in contasCrm.Entities)
+            {
+
+                Console.WriteLine("===========================");
+                Console.WriteLine($"O nome é = {conta["name"]}");
+                Console.WriteLine("--------------------");
+
+                Console.WriteLine($"O Id da Conta é = {conta["accountid"]}");
+                Console.WriteLine("--------------------");
+
+                string telephoneDaConta = conta.Contains("telephone1") ? (conta["telephone1"]).ToString() : "Conta não tem telefone cadastrado";
+                Console.WriteLine($"Telefone é = {telephoneDaConta}");
+                Console.WriteLine("--------------------");
+
+                OptionSetValue nivel = conta.Contains("tc4_niveldecliente") ? (OptionSetValue)conta["tc4_niveldecliente"] : null;
+
+                if(nivel != null)
+                {Console.WriteLine($" O nivel é = ====> {nivel.Value} <====");                }
+                else{Console.WriteLine("VAZIO");}
+                
+                Console.WriteLine("--------------------");
+                OptionSetValue porte = conta.Contains("tc4_porte") ? (OptionSetValue)conta["tc4_porte"] : null;
+                if (nivel != null)
+                { Console.WriteLine($" O porte é = ====> {porte.Value} <===="); }
+                else { Console.WriteLine("VAZIO"); }
+
+                Console.WriteLine("--------------------");
+                string fax = conta.Contains("fax") ? (conta["fax"]).ToString() : "Conta não tem fax cadastrado";
+                Console.WriteLine($"FAX é = {fax}");
+
+                EntityReference parentid = conta.Contains("parentaccountid") ? (EntityReference)conta["parentaccountid"] : null;
+                if(parentid == null)
+                { Console.WriteLine("Não tem parent ID"); }
+
+                Console.WriteLine("--------------------");
+                OptionSetValue tipoRelacao = conta.Contains("customertypecode") ? (OptionSetValue)conta["customertypecode"] : null;
+                if (tipoRelacao!= null)
+                { Console.WriteLine($" A Relação é = ====> {tipoRelacao.Value} <===="); }
+                else { Console.WriteLine("SEM RELAÇÃO"); }
+
+                Console.WriteLine("--------------------");
+                string Endereco = conta.Contains("address1_line1") ? (conta["address1_line1"]).ToString() : "Não tem Endereço";
+                Console.WriteLine($"===>{Endereco}");
+                Console.WriteLine("==============================");
+            }
+                Console.ReadKey();
+        }

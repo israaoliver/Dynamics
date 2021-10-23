@@ -118,6 +118,11 @@
   <ItemGroup>
     <Compile Include="ConnectionsFactory\ConnectionDynamics1.cs" />
     <Compile Include="ConnectionsFactory\ConnectionDynamics2.cs" />
+    <Compile Include="Interfaces\IPadraoDeMetodos.cs" />
+    <Compile Include="Models\Concorrentes.cs" />
+    <Compile Include="Models\Contas.cs" />
+    <Compile Include="Models\Contatos.cs" />
+    <Compile Include="Models\Fatura.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -125,8 +130,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
