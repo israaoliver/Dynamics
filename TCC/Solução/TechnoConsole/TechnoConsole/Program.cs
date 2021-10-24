@@ -25,7 +25,7 @@ namespace TechnoConsole
 
             //Criando novas contas no Dynamics 2
             Contas createAccounts = new Contas(connectDynamics2);
-            //createAccounts.CreateDataTable(contasCrm);
+            createAccounts.CreateDataTable(contasCrm);
 
             //===================Contatos======================//
             //Buscar os Contatos no Dynamics 1 na tabela contatos
@@ -34,7 +34,7 @@ namespace TechnoConsole
 
             //Criando novos contatos no Dynamics 2
             Contatos createContacs = new Contatos(connectDynamics2);
-            //createContacs.CreateDataTable(contatosCRM);
+            createContacs.CreateDataTable(contatosCRM);
 
             //========================Concorrentes===========================//
             // Busca concorrentes no Dynamics 1 na tabela concorrentes
@@ -43,7 +43,7 @@ namespace TechnoConsole
 
             //Criando novos concorrentes no Dynamics 2
             Concorrentes createCompetitor = new Concorrentes(connectDynamics2);
-           // createCompetitor.CreateDataTable(concorrentesCRM);
+            createCompetitor.CreateDataTable(concorrentesCRM);
 
             //===========================Fatura================================//
             // Busca faturas no Dynamics 1 na tabela faturas
@@ -52,7 +52,7 @@ namespace TechnoConsole
 
             //Criando novas faturas no Dynamics 2
             Fatura createInvoice = new Fatura(connectDynamics2);
-            //createInvoice.CreateDataTable(faturasCRM);
+            createInvoice.CreateDataTable(faturasCRM);
 
 
             Console.WriteLine("Carga de Dados Finalizado!");
