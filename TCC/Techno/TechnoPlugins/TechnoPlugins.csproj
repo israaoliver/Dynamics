@@ -143,8 +143,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="1- ConexaoDynamics\ConnectionFactory.cs" />
-    <Compile Include="1- ConexaoDynamics\Integrate.cs" />
+    <Compile Include="ConexaoDynamics\ConnectionFactory.cs" />
+    <Compile Include="ConexaoDynamics\Integrate.cs" />
     <Compile Include="Opportunity\OpportunityCustom.cs" />
     <Compile Include="Opportunity\OpportunityNumber.cs" />
     <Compile Include="Opportunity\OpportunityState.cs" />
