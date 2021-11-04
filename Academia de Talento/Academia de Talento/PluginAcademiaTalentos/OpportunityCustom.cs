@@ -65,7 +65,6 @@ namespace PluginAcademiaTalentos
                     account["new_totaldeoportunidades"] = totalDeOportunidades - 1;
                 }
             }
-
             service.Update(account);
         }
 
