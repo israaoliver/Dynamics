@@ -1,0 +1,13 @@
+C:\Users\rebec\source\repos\TechnoMarketplace\TechnoPlugins\bin\Debug\TechnoPlugins.dll.config
+C:\Users\rebec\source\repos\TechnoMarketplace\TechnoPlugins\bin\Debug\TechnoPlugins.dll
+C:\Users\rebec\source\repos\TechnoMarketplace\TechnoPlugins\bin\Debug\TechnoPlugins.pdb
+C:\Users\rebec\source\repos\TechnoMarketplace\TechnoPlugins\bin\Debug\Microsoft.Xrm.Tooling.Connector.dll
+C:\Users\rebec\source\repos\TechnoMarketplace\TechnoPlugins\bin\Debug\Microsoft.Xrm.Tooling.Connector.xml
+C:\Users\rebec\source\repos\TechnoMarketplace\TechnoPlugins\obj\Debug\TechnoPlugins.csproj.CoreCompileInputs.cache
+C:\Users\rebec\source\repos\TechnoMarketplace\TechnoPlugins\obj\Debug\TechnoPlugins.dll
+C:\Users\rebec\source\repos\TechnoMarketplace\TechnoPlugins\obj\Debug\TechnoPlugins.pdb
+C:\Users\rebec\source\repos\TechnoMarketplace\TechnoPlugins\bin\Debug\Newtonsoft.Json.dll
+C:\Users\rebec\source\repos\TechnoMarketplace\TechnoPlugins\bin\Debug\Newtonsoft.Json.xml
+C:\Users\rebec\source\repos\TechnoMarketplace\TechnoPlugins\bin\Debug\Microsoft.Xrm.Sdk.Deployment.dll
+C:\Users\rebec\source\repos\TechnoMarketplace\TechnoPlugins\bin\Debug\Microsoft.Xrm.Sdk.Deployment.xml
+C:\Users\rebec\source\repos\TechnoMarketplace\TechnoPlugins\obj\Debug\TechnoPlugins.csproj.CopyComplete
