@@ -1,0 +1,11 @@
+C:\Users\filip\source\repos\TechnoPlugins2\TechnoPlugins2\bin\Debug\TechnoPlugins2.dll.config
+C:\Users\filip\source\repos\TechnoPlugins2\TechnoPlugins2\bin\Debug\TechnoPlugins2.dll
+C:\Users\filip\source\repos\TechnoPlugins2\TechnoPlugins2\bin\Debug\TechnoPlugins2.pdb
+C:\Users\filip\source\repos\TechnoPlugins2\TechnoPlugins2\bin\Debug\Microsoft.Xrm.Tooling.Connector.dll
+C:\Users\filip\source\repos\TechnoPlugins2\TechnoPlugins2\bin\Debug\Newtonsoft.Json.dll
+C:\Users\filip\source\repos\TechnoPlugins2\TechnoPlugins2\bin\Debug\Microsoft.Xrm.Tooling.Connector.xml
+C:\Users\filip\source\repos\TechnoPlugins2\TechnoPlugins2\bin\Debug\Newtonsoft.Json.xml
+C:\Users\filip\source\repos\TechnoPlugins2\TechnoPlugins2\obj\Debug\TechnoPlugins2.csproj.CoreCompileInputs.cache
+C:\Users\filip\source\repos\TechnoPlugins2\TechnoPlugins2\obj\Debug\TechnoPlugins2.csproj.CopyComplete
+C:\Users\filip\source\repos\TechnoPlugins2\TechnoPlugins2\obj\Debug\TechnoPlugins2.dll
+C:\Users\filip\source\repos\TechnoPlugins2\TechnoPlugins2\obj\Debug\TechnoPlugins2.pdb
